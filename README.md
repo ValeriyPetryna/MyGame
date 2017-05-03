@@ -1,0 +1,2 @@
+# MyGame
+Game "Khrestiki - noliki"
