@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+    #board {     
+      height: 312px;
+      margin: 0 auto;
+      width: 312px;
+    }
+#board input {  
+      float: right;
+      height: 100px;
+      margin: 2px;
+      width: 100px;
+    } 
+    #resetGameButton {
+      font-size: 30px;
+      height: 100px;
+      width: 312px;
+     display: center;
+    }
+  </style>
+  <title>
+GameStarted
+</title>
+</head>
+<body>
+  <div id="board">
+    <input type="button" onclick="onClick(this)" />
+    <input type="button" onclick="onClick(this)" />
+    <input type="button" onclick="onClick(this)" />
+    <input type="button" onclick="onClick(this)" />
+    <input type="button" onclick="onClick(this)" />
+    <input type="button" onclick="onClick(this)" />
+    <input type="button" onclick="onClick(this)" />
+    <input type="button" onclick="onClick(this)" />
+    <input type="button" onclick="onClick(this)" />
+  </div>
+  <input type="button" id="resetGameButton" onclick="reset()" value=" Start new game" />  
+</body>
+</html>
