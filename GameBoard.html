@@ -2,25 +2,31 @@
 <html>
 <head>
   <style>
-    #board { 
-      border: 2px solid grey;
+    #board {
+      border: 1px solid grey;
       height: 312px;
       margin: 0 auto;
       width: 312px;
     }
-#board input { 
+     #board input {
       border: 1px solid black;
       float: right;
+
       height: 100px;
       margin: 2px;
-      width: 100px;
-    } 
+      width: 100px;   
+    }    
     #resetGameButton {
-      border: 1px solid black;
-      font-size: 30px;
-      height: 100px;
-      width: 312px;
-     display: center;
+      height: 52px;
+      width: 314px;
+     margin-left:auto;
+     margin-right:auto;   
+    }
+    #resetGameButton input {
+       font-size: 30px;
+       border: 1px solid gray;    
+       height: 100px;
+       width: 314px;
     }
   </style>
   <title>
@@ -39,6 +45,8 @@ GameStarted
     <input type="button" onclick="onClick(this)" />
     <input type="button" onclick="onClick(this)" />
   </div>
-  <input type="button" id="resetGameButton" onclick="reset()" value=" Start new game" />  
+<div id="resetGameButton">
+  <input type="button"  onclick="reset()" value=" Start new game" />
+  </div>
 </body>
 </html>
