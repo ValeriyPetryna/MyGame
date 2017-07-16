@@ -1,3 +1,4 @@
+/* in last commit I took note your comments and made some adjustments */
 const gameBoard = document.getElementById('board');
 let playerNumber = 1;
 const players = ['O','X']; 
