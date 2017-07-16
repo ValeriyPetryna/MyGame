@@ -17,6 +17,12 @@ var strick, i, j;
     return false;
 }
 
+function reset() { // reset gameBoard
+      var i, inputs = gameBoard.getElementsByTagName('input');
+      for (i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = inputs[i].value = '';
+      }
+    }
 function Winner() // check who win
 {
   var i, inputs = gameBoard.getElementsByTagName('input');     
@@ -41,12 +47,7 @@ function Winner() // check who win
       motion.value = players[playerNumber];
       playerNumber == 1 ? playerNumber-- : playerNumber++;
    motion.disabled = "true";
+    Winner();
  }
 
-function reset() { // reset gameBoard
-      var i, inputs = gameBoard.getElementsByTagName('input');
-      for (i = 0; i < inputs.length; i++) {
-        inputs[i].disabled = inputs[i].value = '';
-      }
-    }
 //допилю еще на ничью
