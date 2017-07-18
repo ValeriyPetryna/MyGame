@@ -1,4 +1,4 @@
-    var gameBoard = document.getElementById('board'), playerNumber = 1, players = ['O','X'], resultValues = [];
+var gameBoard = document.getElementById('board'), playerNumber = 1, players = ['O','X'], resultValues = [];
 comb = [[0, 1, 2], [0, 4, 8], [2, 4, 6], [2, 5, 8], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7]]; //winning combination
 
 function checkWin(value) //Check if game is over(Win/Loose)
@@ -23,6 +23,13 @@ function reset() { // reset gameBoard
         inputs[i].disabled = inputs[i].value = '';
       }
     }
+
+function showMove() {
+      alert('Next move is : '+ players[playerNumber]);
+      
+      resultValues = [];
+    }
+
 function Winner() // check who win
 {
   var i, inputs = gameBoard.getElementsByTagName('input');     
