@@ -28,6 +28,18 @@
        height: 100px;
        width: 314px;
     }
+    #moveButton {
+    height: 72px;
+    width: 314px;
+    position: relative;
+    top:50px;
+    left:518px;
+    }
+#moveButton input {
+       font-size: 30px;
+       border: 1px solid gray;    
+       height: 72px;
+       width: 314px;
   </style>
   <title>
 GameStarted
@@ -48,6 +60,9 @@ GameStarted
 <div id="resetGameButton">
   <input type="button"  onclick="reset()" value=" Start new game" />
   </div>
+  <div id="moveButton">
+<input type="button"  onclick="showMove()" value="Who next?" />
+ </div>
 </body>
 
   <script src="SecondScript.js"></script>
