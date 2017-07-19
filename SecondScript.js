@@ -1,4 +1,3 @@
-/* in last commit I took note your comments and made some adjustments */
 const gameBoard = document.getElementById('board');
 let playerNumber = 1;
 const players = ['O','X']; 
@@ -29,6 +28,10 @@ function reset() { // reset gameBoard
       for (i = 0; i < inputs.length; i++) {
         inputs[i].disabled = inputs[i].value = '';
       }
+    }
+function showMove() {
+      alert('Next move is : '+ players[playerNumber]);
+      resultValues = [];
     }
 
 function Winner() // check who win
