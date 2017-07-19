@@ -3,12 +3,13 @@ let playerNumber = 1;
 const players = ['O','X']; 
 let resultValues = [];
 const comb = [[0, 1, 2], [0, 4, 8], [2, 4, 6], [2, 5, 8], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7]]; //winning combination
-
+let counter=0;
 function checkWin(value) //Check if game is over(Win/Loose)
 { 
 let streak;
 let i;
 let j;
+let Draw=false;
     for (i=0;i<comb.length;i++) 
     { 
     streak=comb[i];
@@ -17,16 +18,24 @@ let j;
             if(resultValues[streak[j]]!=value)
                 break;
          }
-        if (j==3) return true;    // streak of X-X-X or O-O-O   
+        if (j==3)
+        {
+            return true;
+            Draw==true;
+        }
       }
-    return false;
+    if(counter==9&&Draw==false)
+    {
+        alert('OMG: It is DRAW!');
+        reset();
 }
-
+}
 function reset() { // reset gameBoard
     let i;
     const inputs = gameBoard.getElementsByTagName('input');
       for (i = 0; i < inputs.length; i++) {
         inputs[i].disabled = inputs[i].value = '';
+          counter=0;
       }
     }
 function showMove() {
@@ -58,5 +67,6 @@ function Winner() // check who win
       motion.value = players[playerNumber];
       playerNumber == 1 ? playerNumber-- : playerNumber++;
       motion.disabled = "true";
+    counter++;
     Winner();
  }
