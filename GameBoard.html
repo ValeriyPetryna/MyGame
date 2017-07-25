@@ -11,7 +11,6 @@
      #board input {
       border: 1px solid black;
       float: right;
-
       height: 100px;
       margin: 2px;
       width: 100px;
@@ -28,19 +27,14 @@
        height: 100px;
        width: 314px;
     }
-    #moveButton {
+    #move {
     height: 72px;
     width: 314px;
     position: relative;
     top:50px;
-    margin-left:auto;
-    margin-right:auto;
+    left:518px;
     }
-#moveButton input {
-       font-size: 30px;
-       border: 1px solid gray;
-       height: 72px;
-       width: 314px;
+
   </style>
   <title>
 GameStarted
@@ -61,9 +55,9 @@ GameStarted
 <div id="resetGameButton">
   <input type="button"  onclick="reset()" value=" Start new game" />
   </div>
-  <div id="moveButton">
-<input type="button" value=" " />
- </div>
+
+<input id="move" type="button" style="font-size: 30px;border: 1px solid gray;" />
+
 </body>
 
   <script src="game.js"></script>
