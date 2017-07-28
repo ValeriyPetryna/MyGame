@@ -1,0 +1,25 @@
+#board {
+  border: 1px solid grey;
+  height: 312px;
+  margin: 0 auto;
+  width: 312px;
+}
+ #board input {
+  border: 1px solid black;
+  float: right;
+  height: 100px;
+  margin: 2px;
+  width: 100px;
+}
+#resetGameButton {
+  height: 52px;
+  width: 314px;
+ margin-left:auto;
+ margin-right:auto;
+}
+#resetGameButton input {
+   font-size: 30px;
+   border: 1px solid gray;
+   height: 100px;
+   width: 314px;
+}
