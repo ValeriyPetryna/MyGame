@@ -1,41 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <style>
-    #board {
-      border: 1px solid grey;
-      height: 312px;
-      margin: 0 auto;
-      width: 312px;
-    }
-     #board input {
-      border: 1px solid black;
-      float: right;
-      height: 100px;
-      margin: 2px;
-      width: 100px;
-    }
-    #resetGameButton {
-      height: 52px;
-      width: 314px;
-     margin-left:auto;
-     margin-right:auto;
-    }
-    #resetGameButton input {
-       font-size: 30px;
-       border: 1px solid gray;
-       height: 100px;
-       width: 314px;
-    }
-    #move {
-    height: 72px;
-    width: 314px;
-    position: relative;
-    top:50px;
-    left:518px;
-    }
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="mainstyle.css">
   <title>
 GameStarted
 </title>
@@ -54,12 +20,8 @@ GameStarted
   </div>
 <div id="resetGameButton">
   <input type="button"  onclick="reset()" value=" Start new game" />
+  <input id="move" type="button"/>
   </div>
-
-<input id="move" type="button" style="font-size: 30px;border: 1px solid gray;" />
-
 </body>
-
-  <script src="game.js"></script>
-
-</html>
+  <script src="game.js"></script
+<html>
