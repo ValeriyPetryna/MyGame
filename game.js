@@ -8,7 +8,7 @@ document.getElementById('move').value = "Next turn is: X !"
 
 function checkWin (value) { // Check if game is over(Win/Loose)
   let streak, i, j
-  for (i = 0; i < comb.length; i++) {
+  for (i in comb) {
     streak = comb[i]
     for (j = 0; j < comb.length; j++) {
       if (resultValues[streak[j]] !== value)
@@ -38,13 +38,13 @@ function Winner () { // check who win
   for (i = 0; i < inputs.length; i++) {
     resultValues[i] = inputs[i].value // check which value on the game board
   }
-  for (i = 0; i < players.length; i++) {
+  players.forEach(function (item, i, players) {
     if (checkWin(players[i])) {
-      alert('In this battle winner is: ' + players[i] + '   :3')
+      alert('In this battle winner is: ' + item + '   :3')
       reset()
       return
     }
-  }
+  })
   if (checkWin() === false && counter === 9) {
     alert('OMG: It is DRAW!')
     reset()
