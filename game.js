@@ -7,18 +7,17 @@ let counter = 0
 document.getElementById('move').value = "Next turn is: X !"
 
 function checkWin (value) { // Check if game is over(Win/Loose)
-  let  i, j
-var streak = comb.map(function(value,index,comb){
-  // need paste streak=comb[i] but i idk how
-comb.forEach(function(ittem,j,comb) { // ?!
-    
+  let streak, i, j
+  for (i in comb) {
+    streak = comb[i]
+    for (j = 0; j < comb.length; j++) {
       if (resultValues[streak[j]] !== value)
-        break 
-    })
+        break
+    }
     if (j === 3) {
       return true
     }
-})
+  }
   return false
 }
 
@@ -36,9 +35,9 @@ function reset () { // reset gameBoard
 function Winner () { // check who win
   let i
   const inputs = gameBoard.getElementsByTagName('input')
-  inputs.forEach(function(elem,i,inputs) {
-    // resultValues[i] = inputs[i].value 
-  })
+  for (i = 0; i < inputs.length; i++) {
+    resultValues[i] = inputs[i].value // check which value on the game board
+  }
   players.forEach(function (item, i, players) {
     if (checkWin(players[i])) {
       alert('In this battle winner is: ' + item + '   :3')
