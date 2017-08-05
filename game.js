@@ -29,9 +29,9 @@ function checkWin (value) { // Check if game is over(Win/Loose)
 function reset () { // reset gameBoard
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].disabled = inputs[i].value = ''
-    counter = 0
-    playerNumber = 1
   }
+  counter = 0
+  playerNumber = 1
 }
 
 function Winner () { // check who win
