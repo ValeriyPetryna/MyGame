@@ -9,17 +9,17 @@ let playerNumber = 1
 let resultValues = []
 let counter = 0
 
-moveButton.value = "Next turn is: X "
+moveButton.value = 'Next turn is: X '
 
 function checkWin (value) { // Check if game is over(Win/Loose)
-  let streak, i, j
-  for (i in comb) {
-    streak = comb[i]
-    for (j = 0; j < comb.length; j++) {
-      if (resultValues[streak[j]] !== value)
+  let winPlayer
+  for (let i in comb) {
+    let streak = comb[i]
+    for (winPlayer = 0; winPlayer < 3; winPlayer++) {
+      if (resultValues[streak[winPlayer]] !== value)
         break
     }
-    if (j === 3) {
+    if (winPlayer === 3) {
       return true
     }
   }
@@ -35,18 +35,17 @@ function reset () { // reset gameBoard
 }
 
 function Winner () { // check who win
-  let i
-  for (i = 0; i < inputs.length; i++) {
+  for (let i = 0; i < inputs.length; i++) {
     resultValues[i] = inputs[i].value // check which value on the game board
   }
-  players.forEach(function (item, i, players) {
+  players.forEach(function (item, i) {
     if (checkWin(players[i])) {
-      alert('In this battle winner is: ' + item + '   :3')
+      alert('In this battle winner is: ' + item  + '   :3')
       reset()
       return
     }
   })
-  if (checkWin() === false && counter === 9) {
+  if (counter === 9) {
     alert('OMG: It is DRAW!')
     reset()
   }
