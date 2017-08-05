@@ -1,10 +1,15 @@
 const gameBoard = document.getElementById('board')
-let playerNumber = 1
+const inputs = gameBoard.getElementsByTagName('input')
+const moveButton = document.getElementById('move')
+
 const players = ['O', 'X']
-let resultValues = []
 const comb = [[0, 1, 2], [0, 4, 8], [2, 4, 6], [2, 5, 8], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7]] // winning combination
+
+let playerNumber = 1
+let resultValues = []
 let counter = 0
-document.getElementById('move').value = "Next turn is: X !"
+
+moveButton.value = "Next turn is: X "
 
 function checkWin (value) { // Check if game is over(Win/Loose)
   let streak, i, j
@@ -22,19 +27,15 @@ function checkWin (value) { // Check if game is over(Win/Loose)
 }
 
 function reset () { // reset gameBoard
-  let i
-  const inputs = gameBoard.getElementsByTagName('input')
-  for (i = 0; i < inputs.length; i++) {
+  for (let i = 0; i < inputs.length; i++) {
     inputs[i].disabled = inputs[i].value = ''
     counter = 0
     playerNumber = 1
-    document.getElementById('move').value = "Next turn is: X !"
   }
 }
 
 function Winner () { // check who win
   let i
-  const inputs = gameBoard.getElementsByTagName('input')
   for (i = 0; i < inputs.length; i++) {
     resultValues[i] = inputs[i].value // check which value on the game board
   }
@@ -54,7 +55,7 @@ function Winner () { // check who win
 function onClick (motion) {    // X or O on the board
   motion.value = players[playerNumber]
   playerNumber === 1 ? playerNumber-- : playerNumber++
-  document.getElementById('move').value = 'Next turn is:' + players[playerNumber] + '!'
+  moveButton.value = 'Next turn is: ' + players[playerNumber]
   motion.disabled = 'true'
   counter++
   Winner()
