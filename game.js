@@ -38,8 +38,8 @@ function Winner () { // check who win
   for (let i = 0; i < inputs.length; i++) {
     resultValues[i] = inputs[i].value // check which value on the game board
   }
-  players.forEach(function (item, i) {
-    if (checkWin(players[i])) {
+  players.forEach(function (item) {
+    if (checkWin(item)) {
       alert('In this battle winner is: ' + item  + '   :3')
       reset()
       return
