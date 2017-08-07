@@ -8,6 +8,7 @@ const comb = [[0, 1, 2], [0, 4, 8], [2, 4, 6], [2, 5, 8], [3, 4, 5], [6, 7, 8], 
 let playerNumber = 1
 let resultValues = []
 let counter = 0
+let gameData = [['-','-','-'],['-','-','-'],['-','-','-']]
 
 moveButton.value = 'Next turn is: X '
 
@@ -51,8 +52,10 @@ function Winner () { // check who win
   }
 }
 
-function onClick (motion) {    // X or O on the board
+function onClick (motion,row,col) {    // X or O on the board
   motion.value = players[playerNumber]
+  gameData[row][col] = players[playerNumber]
+  console.log(gameData)
   playerNumber === 1 ? playerNumber-- : playerNumber++
   moveButton.value = 'Next turn is: ' + players[playerNumber]
   motion.disabled = 'true'
